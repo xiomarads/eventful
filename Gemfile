@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rails-assets-tether', '>= 1.1.0'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 gem "sprockets-es6", require: "sprockets/es6"
 gem "rails_12factor", group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
