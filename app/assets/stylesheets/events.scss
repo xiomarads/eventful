@@ -1,0 +1,70 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Cambay|Special+Elite');
+
+
+html{
+  font-family: 'Special Elite', cursive;
+}
+
+
+#box-events-wrapper{
+    background: lightgrey;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+#logo{
+  font-family: 'Special Elite', cursive;
+  font-size: 50px;
+  padding: 35px;
+  color: white;
+  font-weight: bolder;
+}
+
+.left-top-menu {
+  color: white;
+  text-decoration: none;
+  padding: 55px;
+  font-size: 20px;
+}
+
+.left-top-menu  a{
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+
+}
+
+.right-top-menu {
+  color: white;
+  text-decoration: none;
+  padding: 55px;
+  font-size: 20px;
+}
+
+.right-top-menu  a{
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.footer{
+ height:40px;
+ margin-top:-40px;
+ color: white;
+}
+
+.footer   a{
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  }
