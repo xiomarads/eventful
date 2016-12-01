@@ -20,6 +20,8 @@
         <h5>Find & create events that enrich your community</h5>
       </div>
 
+
+
       <div class="landing-search-form">
         <form method="get" action="/events/search_results" class="form-inline text-md-center">
   <div class="form-group">
@@ -35,6 +37,7 @@
   </div>
     </div>
 
+
     <div class="row">
       <div class="container-fluid"></div>
         <div class="footer text-xs-center">
@@ -43,17 +46,12 @@
         </div>
   </div>
 
-  <!--
-  <%= form_for [@results] do |f| %>
-      <div>
-  	        <%= f.label :location %>
-  			    <%= f.text_field :location %>
-  		</div>
 
-  	  <div>
-  		     <%= f.label :date %>
-  		     <%= f.date :date %>
-  		</div>
 
-  	<%= f.button %>
-  <%end%> -->
+    <%= form_tag("/events/search_results", :method => "get") do %>
+      <%= label_tag(:date, "When:") %>
+      <%= date_field_tag(:date) %>
+      <%= label_tag(:location, "Where:") %>
+      <%= text_field_tag(:location) %>
+      <%= submit_tag("Find Events") %>
+    <% end %> -->

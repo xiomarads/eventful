@@ -4,11 +4,13 @@ class EventsController < ApplicationController
     render :index
   end
 
-  def search
+  def search_results
 		search_date = params[:date]
+    converted_date = search_date.to_date
     search_location =  params[:location]
 	  @results = Event.where(location: search_location)
-    .where(date: search_date.beginning_of_day..search_date.end_of_day)
+    .where(date: converted_date.beginning_of_day..converted_date.end_of_day)
+
 		render :search_results
 	end
 end
