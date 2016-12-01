@@ -17,7 +17,6 @@ html{
     background: lightgrey;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 
 #logo{
@@ -63,8 +62,20 @@ html{
 }
 
 .footer   a{
-  color: white;
+  color: grey;
   text-decoration: none;
   margin-right: 10px;
   margin-left: 10px;
   }
+
+.featured-events {
+    margin-top: 4%;
+    margin-left: 23%;
+    font-weight: bold;
+  }
+
+.featured-events-body {
+  margin-left: 4%;
+  margin-top: 2%;
+  font-weight: bold;
+}

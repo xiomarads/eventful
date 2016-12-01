@@ -1,4 +1,6 @@
 
+<!-- Featured Events page -->
+
     <div class="row" id="box-events-wrapper">
       <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
@@ -14,11 +16,67 @@
       </div>
     </div>
 
+      <div class="row featured-events-body">
+        <div class="col-sm-9 featured-events-list">
+          <p>Featured Events</p>
+        <div class="row">
+        <ul>
+          <% @featuredevents.each do |an_event| %>
+          <li>
+            <span class="title">T: <%= link_to an_event.title, event_path(an_event.id) %></span>
+            <span class="date">D: <%= link_to an_event.date %></span>
+            <span class="city">C: <%= link_to an_event.city %></span>
+          </li>
+          <% end %>
+        </ul>
+          <!-- <div class="col-sm-4">
+            aaaa
+            aaaa
+          </div>
+          <div class="col-sm-4">
+            aaaa
+            aaaa
+          </div>
+          <div class="col-sm-4">
+            aaaa
+            aaaa
+          </div> -->
+      </div>
+        </div>
+        <div class="col-sm-3 events-filters">
+          <div class="row">
+            Map link </br>
+            xxxx</br>
+            xxxxx</br>
+            xxxxx</br>
+            xxxxx
+          </div>
 
-      <div class="row">
+        <div>
+          Search by:
+        </div>
+        <div class="row">
+          City
+        </div>
+        <div class="row">
+          Category
+        </div>
+        <div class="row">
+          Event type
+        </div>
+        <div class="row">
+          Date
+        </div>
+        <div class="row">
+          Price
+        </div>
+        </div>
+      </div>
+
+      <!-- <div class="row">
         <div class="container-fluid"></div>
           <div class="footer text-xs-center">
             <a href="index.html.erb">Facebook</a>
             <a href="index.html.erb">Instagram</a>
           </div>
-    </div>
+    </div> -->

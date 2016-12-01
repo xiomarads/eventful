@@ -1,4 +1,6 @@
 
+<!-- Landing page -->
+
     <div class="row" id="box-wrapper">
       <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
@@ -19,24 +21,39 @@
       </div>
 
       <div class="landing-search-form">
-        <form class="form-inline text-md-center">
+        <form method="get" action="/events/search_results" class="form-inline text-md-center">
   <div class="form-group">
     <label for="exampleInputName2">When:</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="January 1, 2016">
+    <input type="date-local" class="form-control" id="exampleInputName2" placeholder="January 1, 2016">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail2">Where:</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Granada, Nicaragua">
+    <label for="City">Where:</label>
+    <input type="text" class="form-control" id="city" placeholder="Granada">
   </div>
   <button type="submit" class="btn btn-primary">Find Events</button>
 </form>
   </div>
     </div>
 
-      <div class="row">
-        <div class="container-fluid"></div>
-          <div class="footer text-xs-center">
-            <a href="index.html.erb">Facebook</a>
-            <a href="index.html.erb">Instagram</a>
-          </div>
-    </div>
+    <div class="row">
+      <div class="container-fluid"></div>
+        <div class="footer text-xs-center">
+          <a href="index.html.erb">Facebook</a>
+          <a href="index.html.erb">Instagram</a>
+        </div>
+  </div>
+
+  <!--
+  <%= form_for [@results] do |f| %>
+      <div>
+  	        <%= f.label :location %>
+  			    <%= f.text_field :location %>
+  		</div>
+
+  	  <div>
+  		     <%= f.label :date %>
+  		     <%= f.date :date %>
+  		</div>
+
+  	<%= f.button %>
+  <%end%> -->
