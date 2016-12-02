@@ -10,8 +10,15 @@
         <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
         <div class="col-md-4 right-top-menu text-md-right">
           <%= link_to "More Events", events_path %>
-          <a href="index.html.erb">Sign Up</a>
-          <a href="index.html.erb">Sign In</a>
+            <!-- <% if user_signed_in? %>
+              <p> Hello, <%= current_user.first_name %>! </p>
+            <% end %> -->
+              <% if user_signed_in? %>
+                <%= link_to "Logout", destroy_user_session_path, method: "delete" %>
+              <% else %>
+                <%= link_to "Sign Up", new_user_registration_path %>
+                <%= link_to "Sign In", new_user_session_path %>
+              <% end %>
         </div>
       </div>
 
@@ -23,20 +30,19 @@
 
 
       <div class="landing-search-form">
-        <form method="get" action="/events/search_results" class="form-inline text-md-center">
-  <div class="form-group">
-    <label for="exampleInputName2">When:</label>
-    <input type="date-local" class="form-control" id="exampleInputName2" placeholder="January 1, 2016">
-  </div>
-  <div class="form-group">
-    <label for="City">Where:</label>
-    <input type="text" class="form-control" id="city" placeholder="Granada">
-  </div>
-  <button type="submit" class="btn btn-primary">Find Events</button>
-</form>
+        <%= form_tag("/events/search_results", class: "form-inline text-md-center" ,:method => "get") do %>
+          <div class="form-group">
+          <%= label_tag :date, "When:" %>
+          <%= date_field_tag :date %>
+        </div>
+        <div class="form-group">
+          <%= label_tag(:city, "Where:") %>
+          <%= text_field_tag(:city) %>
+        </div>
+          <%= submit_tag("Find Events") %>
+        <% end %>
   </div>
     </div>
-
 
     <div class="row">
       <div class="container-fluid"></div>
@@ -44,14 +50,4 @@
           <a href="index.html.erb">Facebook</a>
           <a href="index.html.erb">Instagram</a>
         </div>
-  </div>
-
-
-
-    <%= form_tag("/events/search_results", :method => "get") do %>
-      <%= label_tag(:date, "When:") %>
-      <%= date_field_tag(:date) %>
-      <%= label_tag(:location, "Where:") %>
-      <%= text_field_tag(:location) %>
-      <%= submit_tag("Find Events") %>
-    <% end %> -->
+    </div>

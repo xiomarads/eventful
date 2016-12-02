@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
             <%= link_to "Home", root_path %>
-          <a href="index.html.erb">Create Event</a>
+            <%= link_to "Create Event", new_event_path %>
         </div>
         <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
         <div class="col-md-4 right-top-menu text-md-right">
@@ -23,7 +23,7 @@
         <ul>
           <% @featuredevents.each do |an_event| %>
           <li>
-            <span class="title">T: <%= link_to an_event.title, event_path(an_event.id) %></span>
+            <span class="title">T: <%= link_to "#{an_event.title}", event_path(an_event.id) %></span>
             <span class="date">D: <%= link_to an_event.date %></span>
             <span class="city">C: <%= link_to an_event.city %></span>
           </li>
