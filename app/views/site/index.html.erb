@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
           <a href="index.html.erb">Home</a>
-          <a href="index.html.erb">Create Event</a>
+          <%= link_to "Create Event", new_event_path %>
         </div>
         <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
         <div class="col-md-4 right-top-menu text-md-right">
@@ -42,12 +42,4 @@
           <%= submit_tag("Find Events") %>
         <% end %>
   </div>
-    </div>
-
-    <div class="row">
-      <div class="container-fluid"></div>
-        <div class="footer text-xs-center">
-          <a href="index.html.erb">Facebook</a>
-          <a href="index.html.erb">Instagram</a>
-        </div>
     </div>

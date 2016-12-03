@@ -19,15 +19,21 @@ class EventsController < ApplicationController
   render :show
 end
 
-# def create
-#   event = Event.new()
-#         :title => params[:event][:title],
-#         :city => params[:event][:city],
-#         :location => params[:event][:location],
-#         :description => params[:event][:description],
-#         :date => params[:event][:date],
-#         :price => params[:event][:price])
-#   event.save
-#   redirect_to("/")
-# end
+  def new
+    authenticate_user!
+    @event = Event.new
+    render :new
+  end
+
+def create
+  @event = Event.new(
+        :title => params[:event][:title],
+        :city => params[:event][:city],
+        :location => params[:event][:location],
+        :description => params[:event][:description],
+        :date => params[:event][:date],
+        :price => params[:event][:price])
+  @event.save
+  redirect_to "/"
+end
 end
