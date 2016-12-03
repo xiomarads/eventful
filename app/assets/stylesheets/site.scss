@@ -35,12 +35,12 @@ html{
   font-size: 20px;
 }
 
-.left-top-menu  a{
-  color: white;
-  text-decoration: none;
-  margin-left: 10px;
-
-}
+// .left-top-menu  a{
+//   color: white;
+//   text-decoration: none;
+//   margin-left: 10px;
+//
+// }
 
 .right-top-menu {
   color: white;
@@ -49,12 +49,12 @@ html{
   font-size: 20px;
 }
 
-.right-top-menu  a{
-  color: black;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-left: 10px;
-}
+// .right-top-menu  a{
+//   color: black;
+//   text-decoration: none;
+//   margin-right: 10px;
+//   margin-left: 10px;
+// }
 
 .live-enjoy h2{
   font-weight: 300;
@@ -70,4 +70,10 @@ html{
 
 .landing-search-form{
   margin-top: 3%;
+}
+
+.more-events a{
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
 }

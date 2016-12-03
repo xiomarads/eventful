@@ -4,12 +4,14 @@
     <div class="row" id="box-wrapper">
       <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
-          <a href="index.html.erb">Home</a>
+          <%= link_to "Home", root_path %>
           <%= link_to "Create Event", new_event_path %>
+
         </div>
         <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
         <div class="col-md-4 right-top-menu text-md-right">
           <%= link_to "More Events", events_path %>
+
             <!-- <% if user_signed_in? %>
               <p> Hello, <%= current_user.first_name %>! </p>
             <% end %> -->
@@ -42,4 +44,5 @@
           <%= submit_tag("Find Events") %>
         <% end %>
   </div>
+
     </div>

@@ -3,15 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 @import url('https://fonts.googleapis.com/css?family=Cambay|Special+Elite');
 
 
 html{
   font-family: 'Special Elite', cursive;
+  height: 100%;
 }
-
+//
 
 #box-events-wrapper{
     background: lightgrey;
@@ -66,4 +66,11 @@ html{
   margin-left: 4%;
   margin-top: 2%;
   font-weight: bold;
+}
+
+.other-events{
+  background-image: url(cocibolca.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202155430) do
+ActiveRecord::Schema.define(version: 20161203210908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161202155430) do
     t.decimal  "price"
     t.date     "date"
     t.string   "event_type"
+    t.string   "cost"
   end
 
   create_table "users", force: :cascade do |t|
