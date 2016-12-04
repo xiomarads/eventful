@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'paperclip'
 gem 'devise'
 gem 'rails-assets-tether', '>= 1.1.0'
 gem 'bootstrap', '~> 4.0.0.alpha5'

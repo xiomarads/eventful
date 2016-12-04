@@ -1,6 +1,6 @@
 <!-- create events -->
 
-<div class="row" id="box-events-wrapper">
+<div class="row event-new">
   <div class="container-fluid">
     <div class="col-md-4 left-top-menu">
         <%= link_to "Home", root_path %>
@@ -12,13 +12,19 @@
       <%= link_to "Sign Up", new_user_registration_path %>
       <%= link_to "Sign In", new_user_session_path %>
     </div>
-  </div>
+</div>
+</div>
+
+<div class="row info-bar">
+<div class="container">
+  <span>Create & share a new event</span>
+</div>
 </div>
 
 <div class="row">
   <div class="container">
-    <div class="col-md-12 text-xs-center create-form">
-<h1>Create & share a new event</h1>
+    <div class="col-md-12 create-form">
+<h1></h1>
 
  <%= form_for @event do |f| %>
 <div>
@@ -83,4 +89,7 @@
 </div>
 </div>
 </div>
+</div>
+<div class"row c">
+
 </div>

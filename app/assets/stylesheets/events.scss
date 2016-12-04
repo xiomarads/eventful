@@ -63,14 +63,63 @@ html{
   }
 
 .featured-events-body {
-  margin-left: 4%;
   margin-top: 2%;
   font-weight: bold;
 }
 
 .other-events{
-  background-image: url(cocibolca.jpg);
+  background-image: url(concert.jpg);
   background-size: cover;
   background-position: center;
   height: 40vh;
+}
+
+.info-bar{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: -14.5%;
+
+}
+.events-filters {
+  font-size: 24px;
+}
+
+.event-listing {
+  background: #f7f7f7;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.filter-button {
+  margin-bottom: 2%;
+}
+
+.custom {
+    width: 180px !important;
+}
+
+.event-details {
+  background-image: url(granadacenter.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+
+}
+.event-title {
+  margin-top: 5%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.event-new{
+  background-image: url(granadacenter.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+
+}
+.create-form{
+  margin-bottom: 15%;
 }

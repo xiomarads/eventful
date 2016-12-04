@@ -1,0 +1,18 @@
+
+<% @featuredevents.each do |an_event| %>
+  <div class="row event-listing">
+      <div class="col-sm-8">
+        <p><%= link_to "#{an_event.title}", event_path(an_event.id) %></p>
+      </div>
+      <div class="col-sm-4 text-sm-right">
+        <p><%= an_event.date %></p>
+      </div>
+
+      <div class="col-sm-5">
+        <p>City:<%= an_event.city %></p>
+      </div>
+      <div class="col-sm-5 offset-sm-2 text-sm-right">
+        <p>Location:<%= an_event.location %></p>
+      </div>
+  </div>
+<% end %>

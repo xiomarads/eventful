@@ -1,4 +1,26 @@
-<h3>Events results for your selected date & location</h3>
+
+    <div class="row other-events">
+      <div class="container-fluid">
+        <div class="col-md-4 left-top-menu">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Create Event", new_event_path %>
+        </div>
+        <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
+        <div class="col-md-4 right-top-menu text-md-right">
+          <%= link_to "More Events", events_path %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "Sign In", new_user_session_path %>
+        </div>
+    </div>
+    </div>
+
+    <div class="row info-bar">
+    <div class="container">
+      <span>Events for your dates & city</span>
+    </div>
+    </div>
+
+<h3></h3>
 
   <% @results.each do |event| %>
 	 <p>

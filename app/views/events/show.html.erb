@@ -1,13 +1,36 @@
 <!-- Event details -->
+<div class="row event-details">
+  <div class="container-fluid">
+    <div class="col-md-4 left-top-menu">
+        <%= link_to "Home", root_path %>
+        <%= link_to "Create Event", new_event_path %>
+    </div>
+    <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
+    <div class="col-md-4 right-top-menu text-md-right">
+      <%= link_to "More Events", events_path %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
+    </div>
+</div>
+</div>
 
-<h1 id="eventdetails"> Event Details <h1>
-<ul id="eventdetails">
-<li> Title: <%= @event.title %> </li>
-<li> Location: <%= @event.location %> </li>
-<li> City: <%= @event.city %> </li>
-<li> Description: <%= @event.description %> </li>
-<li> Date: <%= @event.date %> </li>
-<li> Price: USD<%= @event.price %> </li>
-</ul>
+<div class="row info-bar">
+<div class="container">
+  <span>Event details</span>
+</div>
+</div>
+
+
+<div class="container">
+  <div class= "row event-title">
+  <p> <%= @event.title %> </p>
+</div>
+<div class="row">
+  <p> City: <%= @event.city %> </p>
+  <p>Location: <%= @event.location %> </p>
+  <p> Description: <%= @event.description %> </p>
+  <p> Date: <%= @event.date %> </p>
+  <p> Price: USD<%= @event.price %> </p>
+</div>
 
 <!-- <%= link_to "Featured Events", events_path %> -->
