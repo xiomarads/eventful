@@ -1,48 +1,46 @@
-
 <!-- Landing page -->
 
-    <div class="row" id="box-wrapper">
-      <div class="container-fluid">
+<div class="row" id="box-wrapper">
+    <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
-          <%= link_to "Home", root_path %>
-          <%= link_to "Create Event", new_event_path %>
+            <%= link_to "Home", root_path %>
+            <%= link_to "Create Event", new_event_path %>
 
         </div>
         <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
         <div class="col-md-4 right-top-menu text-md-right">
-          <%= link_to "Browse Events", events_path %>
+            <%= link_to "Browse Events", events_path %>
 
             <!-- <% if user_signed_in? %>
               <p> Hello, <%= current_user.first_name %>! </p>
             <% end %> -->
-              <% if user_signed_in? %>
-                <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
-              <% else %>
-                <%= link_to "Sign Up", new_user_registration_path %>
-                <%= link_to "Log In", new_user_session_path %>
-              <% end %>
+            <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+        <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Log In", new_user_session_path %>
+            <% end %>
         </div>
-      </div>
+    </div>
 
-      <div class="container live-enjoy text-md-center">
+    <div class="container live-enjoy text-md-center">
         <h2>Create | Enjoy | Connect</h2>
         <h5>Find & create events that enrich your community</h5>
-      </div>
+    </div>
 
-
-
-      <div class="landing-search-form">
+    <div class="row landing-search-form">
         <%= form_tag("/events/search_results", class: "form-inline text-md-center" ,:method => "get") do %>
-          <div class="form-group">
-          <%= label_tag :date, "When:" %>
-          <%= date_field_tag :date %>
-        </div>
         <div class="form-group">
-          <%= label_tag(:city, "Where:") %>
-          <%= text_field_tag(:city) %>
+            <%= label_tag :date, "When:" %>
+            <%= date_field_tag :date, {}, {class: "form-control"} %>
         </div>
-          <%= submit_tag("Find Events") %>
+
+        <div class="form-group">
+            <%= label_tag(:city, "Where:") %>
+            <%= text_field_tag :city, "", class: "form-control" %>
+        </div>
+        <%= submit_tag "Find Events", :class => "btn btn-primary" %>
         <% end %>
-  </div>
 
     </div>
+</div>

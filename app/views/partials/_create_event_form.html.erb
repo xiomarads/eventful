@@ -1,0 +1,92 @@
+<div class="col-md-12 create-form">
+    <h1></h1>
+
+    <%= form_for @event do |f| %>
+    <div class="form-group row">
+        <%= f.label :title, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :city, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :city, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :location, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :location, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :description, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :date, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.date_field :date, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :price, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.number_field :price, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :poster, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.file_field :poster, class: "form-control" %>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <%= f.label :cost, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.select :cost, class: "form-control" do %>
+          <% [['Free', 1], ['Paid', 2], ['By Donation', 3]].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+          <% end %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :category, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.select(:category) do %>
+          <% [['Music & Entertainment', 1], ['Sports & Wellness', 2], ['Theater, Film & Arts', 3], ['Food & Drink', 4], ['Community', 4], ['Education', 5], ['Business & Networking', 6], ['Night Life', 7]].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+          <% end %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :type, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.select(:type) do %>
+          <% [['Class', 1], ['Festival', 2], ['Concert', 3], ['Special Offer', 4], ['Fundraiser', 4], ['Fair', 5], ['Expo', 6], ['Party', 7]].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+          <% end %>
+        </div>
+
+    <div>
+
+    <%=f.button "Publish Event", class: "btn btn-primary e-button"%>
+    <% end %>
+
+  </div>

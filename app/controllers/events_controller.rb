@@ -1,8 +1,28 @@
 class EventsController < ApplicationController
+
   def index
-    @featuredevents = Event.all
+    @events = Event.all
     render :index
   end
+
+
+  def filter_search
+  @events = Event.all
+    if params[:city]
+      @events = @events.where(city: params[:city])
+  end
+    if params[:category]
+      @events = @events.where(category: params[:category])
+  end
+    if params[:event_type]
+    @events = @events.where(event_type: params[:event_type])
+  end
+  if params[:cost]
+    @events = @events.where(cost: params[:cost])
+  end
+  render :filter_search
+
+
 
   def search_results
 		search_date = params[:date]
@@ -10,7 +30,6 @@ class EventsController < ApplicationController
     search_location =  params[:city]
 	  @results = Event.where(city: search_location)
     .where(date: converted_date.beginning_of_day..converted_date.end_of_day)
-
 		render :search_results
 	end
 

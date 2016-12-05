@@ -1,5 +1,5 @@
 
-<% @featuredevents.each do |an_event| %>
+<% @events.each do |an_event| %>
   <div class="row event-listing">
       <div class="col-sm-4">
         <p><%= link_to "#{an_event.title}", event_path(an_event.id) %></p>
