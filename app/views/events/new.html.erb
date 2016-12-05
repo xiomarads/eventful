@@ -8,9 +8,9 @@
     </div>
     <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
     <div class="col-md-4 right-top-menu text-md-right">
-      <%= link_to "More Events", events_path %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Browse Events", events_path %>
+      <%= link_to "Log out", destroy_user_session_path, method: 'delete' %>
+      <%= image_tag (@user.avatar.url(:thumb)), class: "img-fluid rounded profile-pic" %>
     </div>
 </div>
 </div>
@@ -18,6 +18,7 @@
 <div class="row info-bar">
 <div class="container">
   <span>Create & share a new event</span>
+
 </div>
 </div>
 
@@ -31,6 +32,10 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
 </div>
+
+<div class="field">
+   <%= f.file_field :poster %>
+ </div>
 
 <div>
   <%= f.label :city %>

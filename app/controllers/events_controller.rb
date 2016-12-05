@@ -21,6 +21,7 @@ end
 
   def new
     authenticate_user!
+    @user = current_user
     @event = Event.new
     render :new
   end
@@ -32,8 +33,9 @@ def create
         :location => params[:event][:location],
         :description => params[:event][:description],
         :date => params[:event][:date],
-        :price => params[:event][:price])
+        :price => params[:event][:price],
+        :poster => params[:event][:poster])
   @event.save
-  redirect_to "/"
+  redirect_to "/events"
 end
 end

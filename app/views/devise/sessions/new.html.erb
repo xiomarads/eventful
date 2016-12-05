@@ -1,4 +1,4 @@
-<div class="row" id="box-events-wrapper">
+<div class="row event-new">
   <div class="container-fluid">
     <div class="col-md-4 left-top-menu">
         <%= link_to "Home", root_path %>
@@ -7,16 +7,23 @@
     <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
     <div class="col-md-4 right-top-menu text-md-right">
       <%= link_to "More Events", events_path %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Logout", destroy_user_session_path, method: 'delete' %>
+      <%= image_tag (@user.avatar.url(:thumb)), class: "img-fluid rounded profile-pic" %>
     </div>
-  </div>
 </div>
+</div>
+
+<div class="row info-bar">
+<div class="container">
+  <span>To create an event please log in or sign up</span>
+
+</div>
+</div>
+
 
 <div class="row">
   <div class="container">
     <div class="col-md-12 text-xs-center sup-form">
-<h2>Welcome back! <br /> Please log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">

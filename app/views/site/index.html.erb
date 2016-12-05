@@ -10,16 +10,16 @@
         </div>
         <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
         <div class="col-md-4 right-top-menu text-md-right">
-          <%= link_to "More Events", events_path %>
+          <%= link_to "Browse Events", events_path %>
 
             <!-- <% if user_signed_in? %>
               <p> Hello, <%= current_user.first_name %>! </p>
             <% end %> -->
               <% if user_signed_in? %>
-                <%= link_to "Logout", destroy_user_session_path, method: "delete" %>
+                <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
               <% else %>
                 <%= link_to "Sign Up", new_user_registration_path %>
-                <%= link_to "Sign In", new_user_session_path %>
+                <%= link_to "Log In", new_user_session_path %>
               <% end %>
         </div>
       </div>
