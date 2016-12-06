@@ -29,14 +29,14 @@
   <div class= "row event-title">
   <p> <%= @event.title %> </p>
  <div class="row container">
-   <p> City: <%= @event.poster %> </p>
+   <%= image_tag (@event.poster.url(:medium)), class: "img-fluid rounded" %>
  </div>
 </div>
 <div class="row">
   <p> City: <%= @event.city %> </p>
   <p>Location: <%= @event.location %> </p>
   <p> Description: <%= @event.description %> </p>
-  <p> Event Link: <%=link_to @event.event_link %> </p>
+  <p> Event Link: <%=link_to @event.event_link, @event.event_link %> </p>
   <p> Date: <%= @event.date.strftime("%A, %d %b %Y") %> </p>
   <p> Cost: <%= @event.cost %> </p>
   <p> Price: USD<%= @event.price %> </p>

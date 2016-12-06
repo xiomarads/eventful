@@ -59,7 +59,8 @@ def create
         :description => params[:event][:description],
         :date => params[:event][:date],
         :price => params[:event][:price],
-        :poster => params[:event][:poster])
+        :poster => params[:event][:poster],
+        :event_link => params[:event][:event_link])
   @event.save
   redirect_to "/events"
 end
