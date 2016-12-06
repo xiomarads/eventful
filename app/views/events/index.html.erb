@@ -25,9 +25,12 @@
         <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
         <div class="col-md-4 right-top-menu text-md-right">
           <%= link_to "Browse Events", events_path %>
+          <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+      <% else %>
           <%= link_to "Sign Up", new_user_registration_path %>
           <%= link_to "Log In", new_user_session_path %>
-
+          <% end %>
         </div>
     </div>
     </div>
