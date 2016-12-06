@@ -1,27 +1,33 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.order(date: :asc)
     render :index
   end
 
 
   def filter_search
   @events = Event.all
-    if params[:city]
+    if params[:city].present?
       @events = @events.where(city: params[:city])
   end
-    if params[:category]
-      @events = @events.where(category: params[:category])
-  end
-    if params[:event_type]
-    @events = @events.where(event_type: params[:event_type])
-  end
-  if params[:cost]
-    @events = @events.where(cost: params[:cost])
-  end
-  render :filter_search
+     if params[:category].present?
+        @events = @events.where(category: params[:category])
+    end
 
+      if params[:event_type].present?
+        @events = @events.where(event_type: params[:event_type])
+    end
+
+      if params[:cost].present?
+        @events = @events.where(cost: params[:cost])
+    end
+
+    if params[:date].present?
+      @events = @events.where(date: params[:date])
+  end
+    render :filter_search
+end
 
 
   def search_results

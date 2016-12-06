@@ -5,7 +5,7 @@
         <p><%= link_to "#{an_event.title}", event_path(an_event.id) %></p>
       </div>
       <div class="col-sm-4 text-sm-right">
-        <p><%= an_event.date %></p>
+        <p><%= an_event.date.strftime("%A, %d %b %Y") %></p>
       </div>
       <div class="col-sm-4 text-sm-right">
         <%= image_tag (an_event.poster.url(:medium)), class: "img-fluid" %>
@@ -19,4 +19,4 @@
         <p>Location:<%= an_event.location %></p>
       </div>
   </div>
-<% end %>
+<% end %> 

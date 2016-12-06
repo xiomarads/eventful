@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204155510) do
+ActiveRecord::Schema.define(version: 20161206165115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20161204155510) do
     t.text     "description"
     t.string   "category"
     t.string   "type"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
     t.string   "location"
     t.string   "city"
     t.datetime "created_at",          null: false
@@ -34,6 +32,7 @@ ActiveRecord::Schema.define(version: 20161204155510) do
     t.string   "poster_content_type"
     t.integer  "poster_file_size"
     t.datetime "poster_updated_at"
+    t.string   "event_link"
   end
 
   create_table "users", force: :cascade do |t|

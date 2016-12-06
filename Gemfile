@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'google_maps_service'
 gem 'paperclip'
 gem 'devise'
 gem 'rails-assets-tether', '>= 1.1.0'

@@ -24,13 +24,19 @@
 <div class="container">
   <div class= "row event-title">
   <p> <%= @event.title %> </p>
+ <div class="row container">
+   <p> City: <%= @event.poster %> </p>
+ </div>
 </div>
 <div class="row">
   <p> City: <%= @event.city %> </p>
   <p>Location: <%= @event.location %> </p>
   <p> Description: <%= @event.description %> </p>
-  <p> Date: <%= @event.date %> </p>
+  <p> Event Link: <%=link_to @event.event_link %> </p>
+  <p> Date: <%= @event.date.strftime("%A, %d %b %Y") %> </p>
+  <p> Cost: <%= @event.cost %> </p>
   <p> Price: USD<%= @event.price %> </p>
 </div>
+<%= render "partials/maps" %>
 
 <!-- <%= link_to "Featured Events", events_path %> -->

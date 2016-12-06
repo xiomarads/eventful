@@ -5,28 +5,34 @@
     <div class="form-group row">
         <%= f.label :title, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.text_field :title, class: "form-control" %>
+          <%= f.text_field :title, placeholder: "Give your event a short distinct name", class: "form-control" %>
         </div>
     </div>
 
     <div class="form-group row">
         <%= f.label :city, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.text_field :city, class: "form-control" %>
+          <%= f.select :city, class: "form-control" do %>
+          <% [[""], ['Granada', 1], ['León', 2], ['Managua', 3], ['San Juan del Sur', 4]].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+          <% end %>
         </div>
     </div>
+
+
 
     <div class="form-group row">
         <%= f.label :location, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.text_field :location, class: "form-control" %>
+          <%= f.text_field :location, placeholder: "Specify an accurate address for your event", class: "form-control" %>
         </div>
     </div>
 
     <div class="form-group row">
         <%= f.label :description, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.text_area :description, class: "form-control" %>
+          <%= f.text_area :description, placeholder: "Tell us fun details about your event", class: "form-control" %>
         </div>
     </div>
 
@@ -40,7 +46,7 @@
     <div class="form-group row">
         <%= f.label :price, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.number_field :price, class: "form-control" %>
+          <%= f.number_field :price, placeholder: "Choose '0' if your event is free or by donation", class: "form-control" %>
         </div>
     </div>
 
@@ -51,12 +57,19 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <%= f.label :event_link, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.url_field :event_link, placeholder: "www.yourwebsite.com or social media link", class: "form-control" %>
+        </div>
+    </div>
+
 
     <div class="form-group row">
         <%= f.label :cost, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
           <%= f.select :cost, class: "form-control" do %>
-          <% [['Free', 1], ['Paid', 2], ['By Donation', 3]].each do |c| -%>
+          <% [[""], ['Free', 1], ['Paid', 2], ['By Donation', 3]].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
           <% end %>
           <% end %>
@@ -67,7 +80,7 @@
         <%= f.label :category, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
           <%= f.select(:category) do %>
-          <% [['Music & Entertainment', 1], ['Sports & Wellness', 2], ['Theater, Film & Arts', 3], ['Food & Drink', 4], ['Community', 4], ['Education', 5], ['Business & Networking', 6], ['Night Life', 7]].each do |c| -%>
+          <% [[""],['Music & Entertainment', 1], ['Sports & Wellness', 2], ['Theater, Film & Arts', 3], ['Food & Drink', 4], ['Community', 4], ['Education', 5], ['Business & Networking', 6], ['Night Life', 7]].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
           <% end %>
           <% end %>
@@ -78,7 +91,7 @@
         <%= f.label :type, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
           <%= f.select(:type) do %>
-          <% [['Class', 1], ['Festival', 2], ['Concert', 3], ['Special Offer', 4], ['Fundraiser', 4], ['Fair', 5], ['Expo', 6], ['Party', 7]].each do |c| -%>
+          <% [[""], ['Class', 1], ['Festival', 2], ['Concert', 3], ['Special Offer', 4], ['Fundraiser', 4], ['Fair', 5], ['Expo', 6], ['Party', 7], ['Meet Up', 8]].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
           <% end %>
           <% end %>

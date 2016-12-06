@@ -1,0 +1,28 @@
+
+<% gmaps = GoogleMapsService::Client.new %>
+<% results = gmaps.geocode("#{@event.location}") %>
+<% results[0][:geometry][:location][:lat] %>
+<% results[0][:geometry][:location][:lng] %>
+
+<div id="map" style="height:400px; background:#f5f5f5;" data-lng="<%= results[0][:geometry][:location][:lng] %>" data-lat="<%= results[0][:geometry][:location][:lat] %>">
+
+</div>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhquxycA_a3WuNyU1SJMTlhxPuLk5b3wI&callback=initMap">
+</script>
+
+<script>
+        function initMap() {
+          var lat = $('#map').data('lat');
+          var lng = $('#map').data('lng');
+          var uluru = {lat: parseFloat(lat), lng: parseFloat(lng)};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+</script>
