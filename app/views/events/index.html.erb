@@ -25,8 +25,13 @@
         <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
         <div class="col-md-4 right-top-menu text-md-right">
         <%= link_to "Create Event", new_event_path %>
+
           <% if user_signed_in? %>
           <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+          <% if current_user.avatar.exists? %>
+          <%= link_to (image_tag current_user.avatar.url(:thumb), class:"img-fluid rounded profile-pic" ), user_profile_path(current_user.id) %>
+          <% end %>
+          
       <% else %>
           <%= link_to "Sign Up", new_user_registration_path %>
           <%= link_to "Log In", new_user_session_path %>

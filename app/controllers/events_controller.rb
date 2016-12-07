@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
 
+
   def filter_search
   @events = Event.all
     if params[:city].present?
@@ -30,6 +31,7 @@ class EventsController < ApplicationController
 end
 
 
+
   def search_results
 		search_date = params[:date]
     converted_date = search_date.to_date
@@ -52,16 +54,37 @@ end
   end
 
 def create
-  @event = Event.new(
-        :title => params[:event][:title],
-        :city => params[:event][:city],
-        :location => params[:event][:location],
-        :description => params[:event][:description],
-        :date => params[:event][:date],
-        :price => params[:event][:price],
-        :poster => params[:event][:poster],
-        :event_link => params[:event][:event_link])
+  @event = Event.new(event_params)
   @event.save
   redirect_to "/events"
 end
+
+
+  def edit
+    @event = Event.find(params[:id])
+    render :edit
+  end
+
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      redirect_to events_path(@event)
+    else
+      render :edit
+    end
+  end
+
+    def destroy
+        event = Event.find(params[:id])
+        event.destroy
+        redirect_to  events_path(event)
+    end
+
+  private
+
+  def event_params
+       params.require(:event).permit(:title, :city, :location, :description, :date, :price, :poster, :event_link)
+   end
 end
