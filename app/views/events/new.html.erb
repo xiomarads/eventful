@@ -1,15 +1,16 @@
 <!-- create events -->
 
-<div class="row event-new">
+<div class="row event-create">
     <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
             <%= link_to "Home", root_path %>
+            <%= link_to "Browse Events", events_path %>
             <%= link_to "Create Event", new_event_path %>
         </div>
         <div class="col-md-4 text-xs-center" id="logo">
             <%= link_to "Eventful", root_path %></div>
         <div class="col-md-4 right-top-menu text-md-right">
-            <%= link_to "Browse Events", events_path %>
+              <%= link_to "Create Event", new_event_path %>
             <%= link_to "Log out", destroy_user_session_path, method: 'delete' %>
             <% if @user.avatar.exists? %>
             <%= image_tag (@user.avatar.url(:thumb)), class: "img-fluid rounded profile-pic" %>

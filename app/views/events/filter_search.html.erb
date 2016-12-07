@@ -1,7 +1,36 @@
-<h1> Your events </h1>
 
-<% @events.each do |event| %>
+    <div class="row other-events">
+      <div class="container-fluid">
+        <div class="col-md-4 left-top-menu">
+            <%= link_to "Home", root_path %>
+              <%= link_to "Browse Events", events_path %>
+    
+        </div>
+        <div class="col-md-4 text-xs-center" id="logo"> <%= link_to "Eventful", root_path %></div>
+        <div class="col-md-4 right-top-menu text-md-right">
+          <%= link_to "Create Event", new_event_path %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "Log In", new_user_session_path %>
+        </div>
+    </div>
+    </div>
+
+    <div class="row info-bar">
+    <div class="container">
+      <span>Events results for your search</span>
+    </div>
+    </div>
+
+<!-- <% @events.each do |event| %>
  <p>
   <%= event.city %><%= event.title %>
  </p>
-<% end %>
+<% end %> -->
+
+<div class="row event-listing">
+  <% @events.each do |event| %>
+        <div class="col-sm-12">
+          <p><%= link_to "#{event.title}", event_path(event.id) %></p>
+        </div>
+  <% end %>
+</div>

@@ -4,13 +4,12 @@
     <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
             <%= link_to "Home", root_path %>
-            <%= link_to "Create Event", new_event_path %>
+              <%= link_to "Browse Events", events_path %>
 
         </div>
         <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
         <div class="col-md-4 right-top-menu text-md-right">
-            <%= link_to "Browse Events", events_path %>
-
+            <%= link_to "Create Event", new_event_path %>
             <!-- <% if user_signed_in? %>
               <p> Hello, <%= current_user.first_name %>! </p>
             <% end %> -->

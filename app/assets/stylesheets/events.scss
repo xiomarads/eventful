@@ -13,6 +13,12 @@ html{
 }
 //
 
+.event-create{
+  background-image: url(granadacenter_lowres.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+}
 
 .date{
   font-size: 14px;
@@ -138,7 +144,6 @@ html{
   background-size: cover;
   background-position: center;
   height: 40vh;
-
 }
 .create-form{
   margin-bottom: 15%;
