@@ -13,32 +13,25 @@ html{
 }
 //
 
+.title {
+  margin-bottom: 4%;
+  margin-left: 2.5%;
+}
+// .detail-info {
+//
+// }
+
+.comment-area {
+  margin-top: 10%;
+}
+
 .event-create{
   background-image: url(granadacenter_lowres.jpg);
   background-size: cover;
   background-position: center;
   height: 40vh;
 }
-
-.date{
-  font-size: 14px;
-}
-
-.cost{
-  font-size: 14px;
-}
-
-.event-type{
-  font-size: 14px;
-}
-
-.category{
-  font-size: 14px;
-}
-
-.city{
-  font-size: 14px;
-}
+#date, #cost, #event-type, #category, #city { font-size: 14px; }
 #box-events-wrapper{
     background: lightgrey;
     background-size: cover;
@@ -106,6 +99,13 @@ html{
   font-weight: bold;
   font-size: 30px;
   margin-left: -16%;
+}
+
+.info-bar a{
+  color: white;
+  text-decoration: none;
+  margin-left: 1%;
+  font-size: 14px;
 
 }
 .events-filters {
@@ -156,5 +156,12 @@ html{
 
 .e-button{
   margin-top: 2%;
-  margin-left: 1.5%;
+  margin-left: 1.5%
 }
+#new_comment { clear: both; }
+#form-filter-search .form-group {
+  display: block;
+  margin: 5px 0;
+}
+#form-filter-search label.control-label { text-align: right; }
+#form-filter-search input, #form-filter-search select, #form-filter-search textarea { width: 100%; }

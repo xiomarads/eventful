@@ -19,15 +19,3 @@ Event.create!(title: "Amor, no me quieras tanto", description: "Theater piece ba
 
 
 Event.create!(title: "Christmas dinner under the stars", description: "For the first time in Granada 5 of the best restaurants joined forces to bring to you a beautiful dinner space...open-skies, candle-lit, right on the edge of our beautiful lake marina.", category: "Food & Drink", event_type: "Special Offer", location: "Marina Cocibolca, Granada, Nicaragua", city: "Granada", cost: "Paid", price: 50, date: Date.today + 5 .days)
-
-Event.create!(title: "Clara Grun Concert", description: "Join Clara Grun and Perrozompopo for a delightful concert night, guitar, piano, saxophone.  All cover money raised will be destined to scholarships for UPNicaragua girls", category: "Music & Entertainment", event_type: "Fundraiser", location: "Casa de la Mujer, Granada, Nicaragua", city: "Granada", cost: "By donation", price: 0, date: Date.today)
-
-Event.create!(title: "Tuku Concert", description: "All the way from Zim, Tuku, the legend, will share an amazing African beats night", category: "Music & Entertainment", event_type: "Concert", location: "Convento San Francisco", city: "Granada", cost: "Paid", price: 40, date: Date.today)
-
-Event.create!(title: "Granada Networking Dinner", description: "Business ownners coming together to welcome three new entrepreneurs joining our community", category: "Business & Networking", event_type: "Special Offer", location: "Bistro León", city: "León", cost: "Paid", price: 10, date: Date.today + 2 .days)
-
-Event.create!(title: "Anatomy for Yoga", description: "Join April Hyatt gives a class on anatomy for yogis", category: "Education", event_type: "Special Offer", location: "El Bajo", city: "Managua", cost: "By donation", price: 0, date: Date.today + 2 .days)
-
-Event.create!(title: "Amor, no me quieras tanto", description: "Theater piece based on Carmela Icabalzeta's novel, welcome two of the 2 most accomplished contemporary Nicaraguan actors", category: "Theater, Film & Arts", event_type: "Concert", location: "Pelican Eyes Resort", city: "San Juan del Sur", cost: "By donation", price: 0, date: Date.today + 3 .days)
-
-Event.create!(title: "Christmas dinner & dancing under the stars", description: "For the first time in Granada 5 of the best restaurants joined forces to bring to you a beautiful dinner space...open-skies, candle-lit, right on the edge of our beautiful lake marina, followed with drinks and tango dancing", category: "Night Life", event_type: "Special Offer", location: "Marina Cocibolca", city: "Granada", cost: "Paid", price: 50, date: Date.today + 5 .days)

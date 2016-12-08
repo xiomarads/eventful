@@ -1,7 +1,8 @@
-<div class="row">
-  <div class="container-fluid"></div>
-    <div class="footer text-xs-center">
-      <a href="index.html.erb">About Us</a>
-      <a href="index.html.erb">Contact Us</a>
-    </div>
+<footer class="navbar-fixed-bottom global-footer">
+  <div class="col-md-6 text-md-right about">
+<%= link_to "About", about_path %>
 </div>
+  <div class="col-md-6 text-md-left contact">
+<%= link_to "Contact", contact_path %>
+</div>
+</footer>

@@ -12,11 +12,8 @@
     <div class="form-group row">
         <%= f.label :city, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.select :city, class: "form-control" do %>
-          <% [[""], ['Granada'], ['León'], ['Managua'], ['San Juan del Sur']].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-          <% end %>
-          <% end %>
+          <% cities_arr = ["Granada","León","Managua","San Juan del Sur"]  %>
+          <%= f.select :city, options_for_select(cities_arr), {}, {:class => "form-control"} %>
         </div>
     </div>
 
@@ -67,24 +64,19 @@
     <div class="form-group row">
         <%= f.label :cost, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.select :cost, class: "form-control" do %>
-          <% [[""], ['Free', 1], ['Paid', 2], ['By Donation', 3]].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-          <% end %>
-          <% end %>
+          <% costs_arr = ["Free","Paid","By Donation"] %>
+          <%= f.select :cost, options_for_select(costs_arr), {}, {:class => "form-control"} %>
         </div>
     </div>
 
     <div class="form-group row">
         <%= f.label :category, class: "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
-          <%= f.select(:category) do %>
-          <% [[""],['Music & Entertainment', 1], ['Sports & Wellness', 2], ['Theater, Film & Arts', 3], ['Food & Drink', 4], ['Community', 4], ['Education', 5], ['Business & Networking', 6], ['Night Life', 7]].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-          <% end %>
-          <% end %>
+          <% cat_array = ["Music & Entertainment","Sports & Wellness","Theater, Film & Arts","Food & Drink","Community","Education","Business & Networking","Night Life", "Other"  ] %>
+          <%= f.select :category, options_for_select(cat_array), {}, {:class => "form-control"} %>
         </div>
     </div>
+
 
     <div class="form-group row">
         <%= f.label :type, class: "col-sm-2 col-form-label" %>

@@ -30,8 +30,6 @@ class EventsController < ApplicationController
     render :filter_search
 end
 
-
-
   def search_results
 		search_date = params[:date]
     converted_date = search_date.to_date
@@ -42,8 +40,10 @@ end
 	end
 
   def show
-  @event = Event.find params[:id]
-  render :show
+    @event = Event.find params[:id]
+    @a_comment = Comment.new
+    @comments = @event.comments
+    render :show
 end
 
   def new

@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   root "site#index"
   get "/events/search_results", to: "events#search_results"
   get "/events/filter_search", to: "events#filter_search"
-  resources :events
+  get "/info/about", to: "info#about", :as => :about
+  get "/info/contact", to: "info#contact", :as => :contact
+  resources :events do
+    resources :comments
+  end
 end
