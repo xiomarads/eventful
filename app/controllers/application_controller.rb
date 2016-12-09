@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
   # Setup global parameters
       GoogleMapsService.configure do |config|
-        config.key = 'AIzaSyDhquxycA_a3WuNyU1SJMTlhxPuLk5b3wI'
+        config.key = 'AIzaSyAWpJMCutqieXGQo5WyxIyKIFVwzMwbFtA'
         config.retry_timeout = 20
         config.queries_per_second = 10
       end
