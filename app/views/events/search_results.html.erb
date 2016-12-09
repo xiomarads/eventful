@@ -33,6 +33,7 @@
     <% @results.each do |event| %>
           <div class="col-sm-12">
             <p><%= link_to "#{event.title}", event_path(event.id) %></p>
+            
           </div>
     <% end %>
   </div>

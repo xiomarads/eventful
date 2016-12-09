@@ -1,1 +1,29 @@
-<h1> Contact us </h1>
+<div class="row" class="contact-us">
+    <div class="container-fluid">
+        <div class="col-md-4 left-top-menu">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Browse Events", events_path %>
+        </div>
+        <div class="col-md-4 text-xs-center" id="logo">Eventful</div>
+        <div class="col-md-4 right-top-menu text-md-right">
+            <%= link_to "Create Event", new_event_path %>
+
+            <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+            <% if current_user.avatar.exists? %>
+            <%= link_to (image_tag current_user.avatar.url(:thumb), class:"img-fluid rounded profile-pic" ), user_profile_path(current_user.id) %>
+            <% end %>
+
+        <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Log In", new_user_session_path %>
+            <% end %>
+
+        </div>
+    </div>
+
+    <div class="container live-enjoy text-md-center">
+        <h2>Create | Enjoy | Connect</h2>
+        <p>Eventful is an events platform providing a space for finding and creating events happening in Nicaragua's top tourist destinations.
+        We created a simple application that allows anyone to create, share, find and enjoy events happening around them.  Find classes, concerts, festivals, fairs, art expos, parties and more. We provide the space, you fuel it with events and passion. </p>
+    </div>

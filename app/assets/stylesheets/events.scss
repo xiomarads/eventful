@@ -13,6 +13,35 @@ html{
 }
 //
 
+
+.mission {
+  margin-top: 10%;
+}
+.mission h1{
+  font-size: 70px;
+  color: white;
+
+}
+.mission  p{
+  color: white;
+  font-size: 25px;
+  margin-top: 5%;
+  background-color: rgba(128, 128, 128, 0.43);
+}
+
+.about-us{
+  background-image: url("guegue.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.detail-link {
+  text-decoration: none;
+  color: black;
+}
+
 .title {
   margin-bottom: 4%;
   margin-left: 2.5%;

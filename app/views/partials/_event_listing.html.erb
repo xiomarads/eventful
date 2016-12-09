@@ -1,11 +1,11 @@
 <% @events.each do |an_event| %>
 <div class="row event-listing">
   <div class="col-sm-4 text-sm-right">
-      <%= image_tag (an_event.poster.url(:medium)), class: "img-fluid" %>
+      <%= link_to (image_tag (an_event.poster.url(:medium)), class: "img-fluid"), event_path(an_event.id) %>
   </div>
 
     <div class="col-sm-8 text-sm-center">
-        <p><%= link_to "#{an_event.title}", event_path(an_event.id) %></p>
+        <p><%= link_to "#{an_event.title}", event_path(an_event.id), class: "detail-link"%></p>
     </div>
 
     <div>

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+
+gem 'acts_as_votable'
 gem 'google_maps_service'
 gem 'paperclip'
 gem 'devise'

@@ -59,7 +59,6 @@ def create
   redirect_to "/events"
 end
 
-
   def edit
     @event = Event.find(params[:id])
     render :edit
