@@ -54,14 +54,21 @@ end
   end
 
 def create
-  @event = Event.new(event_params)
+  @event = current_user.events.new(event_params)
   @event.save
   redirect_to "/events"
 end
 
   def edit
+
+    @events = Event.where(user_id: current_user.id)
     @event = Event.find(params[:id])
+      if current_user.id == @event.user_id
     render :edit
+      else
+    redirect_to "/"
+    end
+
   end
 
 
@@ -76,6 +83,7 @@ end
   end
 
     def destroy
+      
         event = Event.find(params[:id])
         event.destroy
         redirect_to  events_path(event)

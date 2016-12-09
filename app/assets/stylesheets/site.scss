@@ -11,33 +11,10 @@ html{
 }
 
 
-.about {
-  margin-top: 0.75%;
-}
-
-.contact {
-  margin-top: 0.75%;
-}
-
-.about a{
-  color: #eee;;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 15px;
-}
-.contact a{
-
-  color: #eee;;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: 1%;
-  font-size: 15px;
-}
 .global-footer{
-  background-color: rgba(85, 89, 92, 0.41);
-  height: 40px;
-  font: weight;
-  position: absolute;
+  // background-color: rgba(85, 89, 92, 0.41);
+  // height: 40px;
+  // font: weight;
 }
 
 #map {
@@ -110,4 +87,16 @@ html{
   color: black;
   text-decoration: none;
   font-size: 30px;
+}
+
+footer {
+    background: rgba(163, 174, 181, 0.28);
+    padding: 1%;
+    margin-top: 1%;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+
 }
