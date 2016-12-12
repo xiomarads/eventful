@@ -11,6 +11,7 @@ html{
 }
 
 
+
 .global-footer{
   // background-color: rgba(85, 89, 92, 0.41);
   // height: 40px;
@@ -23,7 +24,7 @@ html{
 }
 
 #box-wrapper{
-    background-image: url("granadacenter_lowres.jpg");
+    background-image: url("granada_lowres_2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -90,13 +91,14 @@ html{
 }
 
 footer {
-    background: rgba(163, 174, 181, 0.28);
+    background: black;
     padding: 1%;
     margin-top: 1%;
 }
 
 footer a {
-  color: #000;
+  color: white;
   text-decoration: none;
+  font-weight: bold;
 
 }

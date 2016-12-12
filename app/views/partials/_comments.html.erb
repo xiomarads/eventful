@@ -1,18 +1,17 @@
+<div class="container">
+
+
 <%= form_for [@event, @a_comment] do |f| %>
 
-<!-- <div class="container"> -->
-<div class="form-group row comment-area">
-    <h5>Share a comment</h5>
+<div class="form-group comment-area">
+  <h3 class="">Share a comment</h3>
     <%= f.label :email, class: "col-sm-2 form-label" %>
-    <div class="col-sm-6">
-        <%= f.text_field :email, class: "form-control" %>
-    </div>
+    <%= f.text_field :email, class: "form-control" %>
+
 </div>
 <div class="form-group">
     <%= f.label :feedback, class: " col-sm-2 form-label"  %>
-    <div class="col-sm-6">
-        <%= f.text_area :feedback, class: "form-control"%>
-    </div>
+    <%= f.text_area :feedback, class: "form-control"%>
 </div>
 <div class="form-group">
     <div class="">
@@ -20,4 +19,5 @@
     </div>
 </div>
 <% end  %>
-<!-- <div> -->
+
+</div>

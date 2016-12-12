@@ -1,5 +1,36 @@
 class EventsController < ApplicationController
 
+
+
+
+  def like
+    @event = Event.find(params[:id])
+    puts @event.id
+    id = params[:id]
+    session[:events] ||= {}
+    unless session[:events][id]
+      puts "adding the vote"
+      @event.votes += 1
+      @event.save
+      session[:events][id] = "yes"
+    end
+    puts "redirecting"
+    redirect_to events_path
+  end
+
+
+  def unlike
+    @event = Event.find(params[:id])
+    id = params[:id]
+    session[:events] ||= {}
+    unless session[:events][id]
+      @event.votes -= 1
+      @event.save
+      session[:events][id] = "yes"
+    end
+    redirect_to events_path
+  end
+
   def index
     @events = Event.order(date: :asc)
     render :index
@@ -60,10 +91,9 @@ def create
 end
 
   def edit
-
     @events = Event.where(user_id: current_user.id)
     @event = Event.find(params[:id])
-      if current_user.id == @event.user_id
+
     render :edit
       else
     redirect_to "/"
@@ -83,15 +113,15 @@ end
   end
 
     def destroy
-      
         event = Event.find(params[:id])
         event.destroy
         redirect_to  events_path(event)
     end
+
+
 
   private
 
   def event_params
        params.require(:event).permit(:title, :city, :location, :description, :date, :price, :poster, :event_link)
    end
-end

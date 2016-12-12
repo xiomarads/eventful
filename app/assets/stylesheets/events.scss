@@ -7,11 +7,19 @@
 @import url('https://fonts.googleapis.com/css?family=Cambay|Special+Elite');
 
 
+.votes {
+  margin-top: 1%;
+}
+
 html{
   font-family: 'Special Elite', cursive;
   height: 100%;
 }
 //
+
+#map {
+      margin-top: 2%;
+}
 
 
 .mission {
@@ -51,7 +59,7 @@ html{
 // }
 
 .comment-area {
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 .event-create{

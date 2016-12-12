@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/events/filter_search", to: "events#filter_search"
   get "/info/about", to: "info#about", :as => :about
   get "/info/contact", to: "info#contact", :as => :contact
+  post "/events/:id/like", to: "events#like", :as => :like
+  post "/events/:id/unlike", to: "events#unlike", :as => :unlike
   resources :events do
     resources :comments
   end

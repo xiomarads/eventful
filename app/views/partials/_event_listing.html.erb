@@ -2,6 +2,16 @@
 <div class="row event-listing">
   <div class="col-sm-4 text-sm-right">
       <%= link_to (image_tag (an_event.poster.url(:medium)), class: "img-fluid"), event_path(an_event.id) %>
+      <div class="row votes">
+        <%= link_to (image_tag ("like.svg"), class: "col-md-3 offset-md-2 img-fluid"), like_path(an_event.id), :method => :post %>
+        <%= link_to (image_tag ("unlike.svg"), class: "col-md-3 offset-md-2 img-fluid"), unlike_path(an_event.id), :method => :post %>
+
+      </div>
+      <p><%= an_event.votes %></p>
+
+
+      <!-- <a href="/events/<%=an_event.id%>/upvote"> <img src="assets/like.svg"> method="post"</a>
+      <a href="/events/<%=an_event.id%>/upvote"> <img src="assets/unlike.svg"> </a> -->
   </div>
 
     <div class="col-sm-8 text-sm-center">
