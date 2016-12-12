@@ -7,6 +7,19 @@
 @import url('https://fonts.googleapis.com/css?family=Cambay|Special+Elite');
 
 
+.landing-results{
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  background-image: url("volcano.jpg");
+
+}
+.filter-results{
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  background-image: url("guaca.jpg");
+}
 .votes {
   margin-top: 1%;
 }
@@ -63,7 +76,7 @@ html{
 }
 
 .event-create{
-  background-image: url(granadacenter_lowres.jpg);
+  background-image: url("poetryfest.jpg");
   background-size: cover;
   background-position: center;
   height: 40vh;
@@ -123,8 +136,8 @@ html{
   font-weight: bold;
 }
 
-.other-events{
-  background-image: url(granadacenter_lowres.jpg);
+.browse-events{
+  background-image: url(folk.jpg);
   background-size: cover;
   background-position: center;
   height: 40vh;
@@ -164,7 +177,7 @@ html{
 }
 
 .event-details {
-  background-image: url(granadacenter_lowres.jpg);
+  background-image: url("maderas.jpg");
   background-size: cover;
   background-position: center;
   height: 40vh;

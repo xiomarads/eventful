@@ -1,5 +1,5 @@
-
-    <div class="row other-events">
+<!-- Results for filters -->
+    <!-- <div class="row other-events">
       <div class="container-fluid">
         <div class="col-md-4 left-top-menu">
             <%= link_to "Home", root_path %>
@@ -19,18 +19,93 @@
     <div class="container">
       <span>Events results for your search</span>
     </div>
-    </div>
+    </div> -->
 
 <!-- <% @events.each do |event| %>
  <p>
   <%= event.city %><%= event.title %>
  </p>
 <% end %> -->
-
+<!--
 <div class="row event-listing">
   <% @events.each do |event| %>
         <div class="col-sm-12">
           <p><%= link_to "#{event.title}", event_path(event.id) %></p>
         </div>
   <% end %>
+</div> -->
+
+
+
+<div class="row filter-results">
+    <div class="container-fluid">
+        <div class="col-md-4 left-top-menu">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Browse Events", events_path %>
+        </div>
+        <div class="col-md-4 text-xs-center" id="logo">
+            <%= link_to "Eventful", root_path %>
+        </div>
+        <div class="col-md-4 right-top-menu text-md-right">
+            <%= link_to "Create Event", new_event_path %>
+
+            <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+            <% if current_user.avatar.exists? %>
+            <%= link_to (image_tag current_user.avatar.url(:thumb), class:"img-fluid rounded profile-pic" ), user_profile_path(current_user.id) %>
+            <% end %>
+
+        <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Log In", new_user_session_path %>
+            <% end %>
+        </div>
+    </div>
 </div>
+
+<div class="row info-bar">
+    <div class="container">
+        <span>Events results for you</span>
+    </div>
+</div>
+<div class="container featured-events-body">
+    <div class="col-sm-8 featured-events-list">
+        <div class="row">
+          <% @events.each do |event| %>
+          <div class="row event-listing">
+            <div class="col-sm-4 text-sm-right">
+                <%= link_to (image_tag (event.poster.url(:medium)), class: "img-fluid"), event_path(event.id) %>
+                <div class="row votes">
+                  <%= link_to (image_tag ("like.svg"), class: "col-md-3 offset-md-2 img-fluid"), like_path(event.id), :method => :post %>
+                  <%= link_to (image_tag ("unlike.svg"), class: "col-md-3 offset-md-2 img-fluid"), unlike_path(event.id), :method => :post %>
+
+                </div>
+                <p><%= event.votes %></p>
+
+            </div>
+
+              <div class="col-sm-8 text-sm-center">
+                  <p><%= link_to "#{event.title}", event_path(event.id), class: "detail-link"%></p>
+              </div>
+
+              <div>
+                  <p><%= event.date.strftime("%A, %d %b %Y") %></p>
+              </div>
+
+
+              <div>
+                  <p>City:<%= event.city %></p>
+              </div>
+              <div>
+                  <p>Location:<%= event.location %></p>
+              </div>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+    <%= render "partials/footer" %>
+
+
+<!-- ------------- -->
