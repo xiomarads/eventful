@@ -1,8 +1,6 @@
 class EventsController < ApplicationController
 
 
-
-
   def like
     @event = Event.find(params[:id])
     puts @event.id
@@ -93,18 +91,14 @@ end
   def edit
     @events = Event.where(user_id: current_user.id)
     @event = Event.find(params[:id])
-
     render :edit
-      else
-    redirect_to "/"
-    end
+      # else
+    # redirect_to "/"
 
   end
 
-
   def update
     @event = Event.find(params[:id])
-
     if @event.update(event_params)
       redirect_to events_path(@event)
     else
@@ -119,9 +113,10 @@ end
     end
 
 
-
   private
 
   def event_params
        params.require(:event).permit(:title, :city, :location, :description, :date, :price, :poster, :event_link)
    end
+
+ end

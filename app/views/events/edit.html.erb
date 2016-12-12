@@ -1,3 +1,33 @@
-<h2> Edit your event </h2>
+<div class="row browse-events">
+    <div class="container-fluid">
+        <div class="col-md-4 left-top-menu">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Browse Events", events_path %>
+        </div>
+        <div class="col-md-4 text-xs-center" id="logo">
+            <%= link_to "Eventful", root_path %>
+        </div>
+        <div class="col-md-4 right-top-menu text-md-right">
+            <%= link_to "Create Event", new_event_path %>
+
+            <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+            <% if current_user.avatar.exists? %>
+            <%= link_to (image_tag current_user.avatar.url(:thumb), class:"img-fluid rounded profile-pic" ), user_profile_path(current_user.id) %>
+            <% end %>
+
+        <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Log In", new_user_session_path %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="row info-bar">
+    <div class="container">
+        <span>Edit your event</span>
+    </div>
+</div>
 
 <%= render "partials/create_event_form" %>
