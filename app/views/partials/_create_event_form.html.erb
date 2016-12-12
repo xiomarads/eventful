@@ -39,12 +39,7 @@
         </div>
     </div>
 
-    <div class="form-group row">
-        <%= f.label :price, class: "col-sm-2 col-form-label" %>
-        <div class="col-sm-10">
-          <%= f.number_field :price, placeholder: "Choose '0' if your event is free or by donation", class: "form-control" %>
-        </div>
-    </div>
+
 
     <div class="form-group row">
         <%= f.label :poster, class: "col-sm-2 col-form-label" %>
@@ -66,6 +61,13 @@
         <div class="col-sm-10">
           <% costs_arr = ["Free","Paid","By Donation"] %>
           <%= f.select :cost, options_for_select(costs_arr), {}, {:class => "form-control"} %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :price, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.number_field :price, placeholder: "Choose '0' if your event is free or by donation", class: "form-control" %>
         </div>
     </div>
 
