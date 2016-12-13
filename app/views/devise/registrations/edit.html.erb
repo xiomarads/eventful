@@ -1,3 +1,30 @@
+<div class="row event-new">
+    <div class="container-fluid">
+        <div class="col-md-4 left-top-menu">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Browse Events", events_path %>
+        </div>
+        <div class="col-md-4 text-xs-center" id="logo">
+            <%= link_to "Eventful", root_path %></div>
+        <div class="col-md-4 right-top-menu text-md-right">
+            <%= link_to "Create Event", new_event_path %>
+            <%= link_to "Log out", destroy_user_session_path, method: 'delete' %>
+
+        </div>
+    </div>
+</div>
+
+<div class="row info-bar">
+    <div class="container">
+        <span>Update your profile</span>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="col-md-12 text-xs-left edit-account">
+
 <h2>Edit
     <%= resource_name.to_s.humanize %></h2>
 
@@ -51,5 +78,3 @@
     <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
-
-<%= render "partials/footer" %>
